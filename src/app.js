@@ -1,37 +1,56 @@
-console.log("Merhaba Kodlama.io")
+let sayi1 = 10;
+sayi1="Engin"
 
-//JS type safe değildir
-//Typescript type safe jsnin gelişmişi
+let student = {id:1,name:"Berk"}
+//console.log(student);
 
-//var -- aynı değişkene iki değer atadığında izin verir
-//let -- aynı değişkene iki değer atadığında hata verir
+function save(puan=10,ogrenci) {
+    console.log(ogrenci.name+ " : " +puan)
+}
+//save(undefined,student);
 
-let dolarBugun = 9.30
+let students = ["Engin Demiroğ" ,"Halit Kalaycı " , "Berk Kılıç"]
+//console.log(students)
 
-let dolarDun = 9.20
-dolarDun = "9.20"
-{
-    let dolarDun = 9.10
+
+let students2 = [student,{id:2,name:"halit"},"ankara",{city:"istanbul"}]
+//console.log(students2)
+
+//rest
+let showProducts = function (id,...products) {
+    console.log(id)
+    console.log(products[0])
 }
 
-console.log(dolarDun)
+//console.log(typeof showProducts)
+//showProducts(10,"elma","armut","karpuz")
 
-const euroDun = 11.2 //const ile bir değişken tanımlandığında sabittir başka bişey atanmaz
-//euroDun = 11 
+//spread
+let points =[1,2,3,4,50,14]
+console.log(...points)
+console.log(Math.max(...points))
+console.log(..."ABC","D",..."EFG","H")
 
-console.log(euroDun)
+//Destructuring
 
-//array
-//camelCasing -- değişkenler 
-//PascalCasing
-let konutKredileri = ["Konut kredisi","Emlak Konut Kredisi","Kamu Konut Kredisi","Özel Konut Kredisi"]
+let populations = [10000,20000,30000,[40000,10000]]
+let [small,medium,high,[veryHigh,maximum]] =populations
+console.log(small)
+console.log(medium)
+console.log(high)
+console.log(veryHigh)
+console.log(maximum)
 
-console.log("<ul>")
-for(let i = 0;i<konutKredileri.length;i++){
-    console.log("<li>"+konutKredileri[i]+"</li>")
+function someFunction([small1],number) {
+    console.log(small1)
 }
-console.log("</ul>")
 
+someFunction(populations)
 
+let category = {id:1,name:"İçecek"}
+console.log(category.id)
+console.log(category["name"])
 
-console.log(konutKredileri)
+let {id,name1} = category
+console.log(id)
+console.log(name1)
